@@ -1,8 +1,21 @@
 aid: doorstead
 name: Doorstead
-description: 'Doorstead is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Doorstead is a technology-enabled residential property management and tenant
+  placement company headquartered in San Francisco, serving single-family and small
+  multifamily rental owners across California, Washington, Florida, Texas, North Carolina,
+  South Carolina, Ohio, Virginia and Massachusetts. It sells two productized services:
+  Doorstead Place, a tenant-placement-only offering covering rental pricing guidance,
+  listing syndication, professional photography, agent-led tours, tenant screening and
+  digital lease signing; and Doorstead Manage, full-service property management that
+  adds rent collection and distribution, security-deposit holding, income and expense
+  tracking, annual 1099s, 24/7 maintenance coordination, move-in/move-out evaluations,
+  lease renewals and turnovers. The company markets a data-driven rental pricing model
+  and an owner and tenant portal, but publishes no public developer API, SDK, webhook
+  surface or developer portal; its production GraphQL endpoint at api.doorstead.com
+  serves its own first-party applications and rejects anonymous requests. Doorstead
+  discontinued its legacy Rent Guarantee product in early 2025.'
 url: https://raw.githubusercontent.com/api-evangelist/doorstead/refs/heads/main/apis.yml
+image: https://cdn.doorstead.com/images/logo/logo-horizontal-dark-mode.png
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,6 +25,13 @@ created: '2026-08-12'
 modified: '2026-08-12'
 tags:
 - Company
+- Property Management
+- Real Estate
+- PropTech
+- Rental
+- Leasing
+- Residential
+- Tenant Screening
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +40,52 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.doorstead.com/
+- type: Blog
+  url: https://www.doorstead.com/blog
+- type: Pricing
+  url: https://www.doorstead.com/compare-plans
+- type: Plans
+  url: plans/doorstead-plans-pricing.yml
+- type: Support
+  url: https://www.doorstead.com/contact-us
+- type: HelpCenter
+  url: https://tenants.doorstead.com/help
+- type: Login
+  url: https://tenants.doorstead.com/login
+- type: TermsOfService
+  url: https://www.doorstead.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.doorstead.com/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/doorstead
+- type: KnowledgeBase
+  url: https://www.doorstead.com/knowledge
+- type: LLMsTxt
+  url: llms/doorstead-llms.txt
+- type: DomainSecurity
+  url: security/doorstead-domain-security.yml
+x-enrichment:
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Doorstead ships only end-user products — an owner app and a tenant portal — and the
+    single API-shaped host, https://api.doorstead.com/graphql, is the private backend for
+    those apps: it answers anonymous GraphQL introspection with HTTP 403
+    {"message":"Unauthorized"}, and no docs, developer or developers subdomain resolves at
+    all.
+  evidence:
+  - url: https://api.doorstead.com/graphql
+    status: 403
+  - url: https://api.doorstead.com/openapi.json
+    status: 404
+  - url: https://docs.doorstead.com/
+    status: 0
+  - url: https://www.doorstead.com/llms.txt
+    status: 200
+  checked: '2026-08-12'

@@ -1,0 +1,60 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.doorstead.com/compare-plans
+scope: service-plans
+note: >-
+  These are Doorstead's PRODUCT/SERVICE plans for residential rental owners, not API
+  plans. Doorstead publishes no developer API and therefore no API pricing tier, quota
+  or overage of any kind. Prices are transcribed verbatim from the published plan
+  comparison page as read on 2026-08-12; the 4% promotional management rate is a
+  time-limited offer in selected states and will change.
+plan_count: 2
+currency: USD
+billing_model: percentage-of-rent
+plans:
+- name: Doorstead Place
+  slug: place
+  humanURL: https://www.doorstead.com/product/place
+  summary: Tenant placement only, for owners who self-manage after the lease is signed.
+  monthly_management_fee: none
+  tenant_placement_fee: "50% of one month's rent ($1,000 minimum)"
+  placement_fee_due: upon lease signing
+  platform_fee: none
+  termination_fee: none
+  upfront_leasing_fee: none
+  included:
+  - Listing syndication
+  - Professional photography
+  - Rental price optimization / pricing guidance
+  - Licensed agent-led tours (no unsupervised self-tours)
+  - Tenant screening — application processing, identity and fraud protection, credit and income verification, background checks
+  - Legally vetted leases
+  - Digital lease signing
+- name: Doorstead Manage
+  slug: manage
+  humanURL: https://www.doorstead.com/product/manage
+  summary: Full-service property management, including everything in Doorstead Place.
+  monthly_management_fee: "5% monthly"
+  promotional_management_fee: "4% monthly (July promo, selected states: NC, OH, SC, TX, VA)"
+  tenant_placement_fee: "50% of one month's rent ($1,000 minimum)"
+  platform_fee: none
+  termination_fee: none
+  upfront_leasing_fee: none
+  included:
+  - Everything in Doorstead Place
+  - Rent collection and distribution
+  - Security deposit holding
+  - Expense and income tracking
+  - Annual 1099s
+  - 24/7 maintenance support and coordination
+  - Move-in and move-out evaluations
+  - Lease renewal
+  - Property turnover
+markets:
+  states: [CA, FL, MA, NC, OH, SC, TX, VA, WA]
+discontinued:
+- name: Rent Guarantee
+  status: retired
+  retired: '2025'
+  source: https://www.doorstead.com/blog/doorsteads-rent-guarantee
+  note: Legacy upfront rental-guarantee product; Doorstead's own llms.txt instructs assistants not to describe it as current.

@@ -42,5 +42,40 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Doorstead is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Doorstead is a technology-enabled residential property management and tenant placement company
+headquartered in San Francisco, serving single-family and small multifamily rental owners across
+California, Washington, Florida, Texas, North Carolina, South Carolina, Ohio, Virginia and
+Massachusetts. It sells two productized services — **Doorstead Place** (tenant placement only) and
+**Doorstead Manage** (full-service property management). Doorstead discontinued its legacy Rent
+Guarantee product in early 2025.
+
+## API surface
+
+**Doorstead publishes no public developer API.** There is no developer portal, API reference, SDK,
+webhook catalog or machine-readable specification. `docs.doorstead.com`, `developer.doorstead.com`
+and `developers.doorstead.com` do not resolve. The only API-shaped host, `api.doorstead.com`, is the
+private GraphQL backend for Doorstead's own owner app and tenant portal; anonymous requests —
+including GraphQL introspection — return `HTTP 403 {"message":"Unauthorized"}`.
+
+What Doorstead *does* publish, and what this profile captures:
+
+- [`llms/doorstead-llms.txt`](llms/doorstead-llms.txt) — a real, first-party `llms.txt` served at
+  <https://www.doorstead.com/llms.txt>, saved verbatim
+- [`plans/doorstead-plans-pricing.yml`](plans/doorstead-plans-pricing.yml) — the two published
+  service plans and their fees (these are product plans, not API plans)
+- [`security/doorstead-domain-security.yml`](security/doorstead-domain-security.yml) — probed
+  TLS/DNSSEC/SPF/DMARC posture
+- [`well-known/doorstead-well-known.yml`](well-known/doorstead-well-known.yml) — a recorded
+  **absence**: every `/.well-known/` path 404s on every host that returns real status codes
+- [`rate-limits/doorstead-rate-limits.yml`](rate-limits/doorstead-rate-limits.yml) — a recorded
+  absence, `limit_count: 0`
+
+## Links
+
+- Website — <https://www.doorstead.com/>
+- Pricing — <https://www.doorstead.com/compare-plans>
+- Blog — <https://www.doorstead.com/blog>
+- Knowledge base — <https://www.doorstead.com/knowledge>
+- Tenant help — <https://tenants.doorstead.com/help>
+- GitHub — <https://github.com/doorstead>
+- Contact — <https://www.doorstead.com/contact-us>

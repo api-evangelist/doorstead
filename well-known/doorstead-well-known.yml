@@ -1,0 +1,56 @@
+generated: '2026-08-12'
+method: probed
+source: live GET of /.well-known/* on every Doorstead host
+note: >-
+  Every canonical /.well-known/ path 404s on every Doorstead host that returns real
+  status codes. NO WellKnown or SecurityTxt pointer is emitted in apis.yml — this file
+  records a verified ABSENCE, not a served discovery surface. tenants.doorstead.com is
+  a client-side React SPA whose catch-all answers HTTP 200 with the same HTML shell for
+  every path, including a deliberately nonsense control path
+  (/.well-known/this-path-does-not-exist-xyz -> 200 text/html); its 200s are therefore
+  recorded as misses, not documents.
+hosts:
+- host: https://api.doorstead.com
+  role: production GraphQL backend for Doorstead's first-party apps (anonymous requests rejected)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://www.doorstead.com
+  role: marketing website
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://app.doorstead.com
+  role: owner application
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://tenants.doorstead.com
+  role: tenant portal (client-side SPA — catch-all returns 200 HTML for every path)
+  documents:
+  - {path: /.well-known/security.txt, status: 200, content_type: text/html, document: false, note: SPA shell, not a document}
+  - {path: /.well-known/agent-card.json, status: 200, content_type: text/html, document: false, note: SPA shell, not a document}
+  - {path: /.well-known/agent.json, status: 200, content_type: text/html, document: false, note: SPA shell, not a document}
+  - {path: /.well-known/this-path-does-not-exist-xyz, status: 200, content_type: text/html, document: false, note: control probe proving the catch-all}
+- host: https://int-app.doorstead.com
+  role: secondary application host
+  documents:
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+summary:
+  documents_served: 0
+  paths_probed: 27
+  pointer_emitted: false

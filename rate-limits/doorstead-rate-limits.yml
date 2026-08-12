@@ -1,0 +1,15 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.doorstead.com/
+limit_count: 0
+note: >-
+  Doorstead publishes no developer API, so there is no rate-limit contract to record.
+  No developer portal, API reference, terms-of-use API section or docs host exists
+  (docs.doorstead.com, developer.doorstead.com and developers.doorstead.com do not
+  resolve). The only API-shaped surface, https://api.doorstead.com/graphql, is the
+  private backend for Doorstead's own applications and returns HTTP 403
+  {"message":"Unauthorized"} to anonymous requests, including introspection, so no
+  response headers can be observed either. NO RateLimits pointer is emitted in
+  apis.yml — this file records a verified absence, not a published limit.
+limits: []
+headers_observed: []
