@@ -51,7 +51,7 @@ modified: '2026-08-12'
 tags:
 - Company
 - Property Management
-- Real-Estate
+- Real Estate
 - PropTech
 - Rentals
 - Leasing
@@ -66,6 +66,7 @@ tags_raw:
 - Leasing
 - Residential
 - Tenant Screening
+- Real-Estate
 apis: []
 maintainers:
 - FN: Kin Lane
