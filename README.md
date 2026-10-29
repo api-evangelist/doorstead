@@ -64,40 +64,97 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Doorstead is a technology-enabled residential property management and tenant placement company
-headquartered in San Francisco, serving single-family and small multifamily rental owners across
-California, Washington, Florida, Texas, North Carolina, South Carolina, Ohio, Virginia and
-Massachusetts. It sells two productized services — **Doorstead Place** (tenant placement only) and
-**Doorstead Manage** (full-service property management). Doorstead discontinued its legacy Rent
-Guarantee product in early 2025.
+Doorstead is a technology-enabled residential property management and tenant placement company headquartered in San Francisco, serving single-family and small multifamily rental owners across California, Washington, Florida, Texas, North Carolina, South Carolina, Ohio, Virginia and Massachusetts. It sells two productized services: Doorstead Place, a tenant-placement-only offering covering rental pricing guidance, listing syndication, professional photography, agent-led tours, tenant screening and digital lease signing; and Doorstead Manage, full-service property management that adds rent collection and distribution, security-deposit holding, income and expense tracking, annual 1099s, 24/7 maintenance coordination, move-in/move-out evaluations, lease renewals and turnovers. The company markets a data-driven rental pricing model and an owner and tenant portal, but publishes no public developer API, SDK, webhook surface or developer portal; its production GraphQL endpoint at api.doorstead.com serves its own first-party applications and rejects anonymous requests. Doorstead discontinued its legacy Rent Guarantee product in early 2025.
 
-## API surface
+**Areas:** Company · Property Management · Real Estate · PropTech · Rentals · Leasing · Residential · Tenant Screening
 
-**Doorstead publishes no public developer API.** There is no developer portal, API reference, SDK,
-webhook catalog or machine-readable specification. `docs.doorstead.com`, `developer.doorstead.com`
-and `developers.doorstead.com` do not resolve. The only API-shaped host, `api.doorstead.com`, is the
-private GraphQL backend for Doorstead's own owner app and tenant portal; anonymous requests —
-including GraphQL introspection — return `HTTP 403 {"message":"Unauthorized"}`.
+## Doorstead on APIs.io
 
-What Doorstead *does* publish, and what this profile captures:
+Everything profiled for Doorstead is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/doorstead/](https://apis.io/providers/doorstead/)** — or go straight to one of the APIs or properties below.
 
-- [`llms/doorstead-llms.txt`](llms/doorstead-llms.txt) — a real, first-party `llms.txt` served at
-  <https://www.doorstead.com/llms.txt>, saved verbatim
-- [`plans/doorstead-plans-pricing.yml`](plans/doorstead-plans-pricing.yml) — the two published
-  service plans and their fees (these are product plans, not API plans)
-- [`security/doorstead-domain-security.yml`](security/doorstead-domain-security.yml) — probed
-  TLS/DNSSEC/SPF/DMARC posture
-- [`well-known/doorstead-well-known.yml`](well-known/doorstead-well-known.yml) — a recorded
-  **absence**: every `/.well-known/` path 404s on every host that returns real status codes
-- [`rate-limits/doorstead-rate-limits.yml`](rate-limits/doorstead-rate-limits.yml) — a recorded
-  absence, `limit_count: 0`
+### Published properties
 
-## Links
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- Website — <https://www.doorstead.com/>
-- Pricing — <https://www.doorstead.com/compare-plans>
-- Blog — <https://www.doorstead.com/blog>
-- Knowledge base — <https://www.doorstead.com/knowledge>
-- Tenant help — <https://tenants.doorstead.com/help>
-- GitHub — <https://github.com/doorstead>
-- Contact — <https://www.doorstead.com/contact-us>
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Doorstead Domain Security](https://apis.io/security/doorstead/doorstead-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Doorstead Plans Pricing](https://apis.io/plans/doorstead/doorstead-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Doorstead Rate Limits](https://apis.io/rate-limits/doorstead/doorstead-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.doorstead.com/)
+- [Pricing](https://www.doorstead.com/compare-plans)
+- [Support](https://www.doorstead.com/contact-us)
+- [Blog](https://www.doorstead.com/blog)
+- [Terms of service](https://www.doorstead.com/terms-of-service)
+- [Privacy policy](https://www.doorstead.com/privacy-policy)
+- [GitHub](https://github.com/doorstead)
+
+## API Evangelist rating
+
+**Kin Score 18.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 59.2 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 13.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/doorstead/](https://apis.io/providers/doorstead/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Doorstead: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/doorstead/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
